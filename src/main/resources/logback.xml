@@ -1,0 +1,18 @@
+<configuration>
+    <conversionRule conversionWord="traceToken" converterClass="kamon.logback.LogbackTraceIDConverter"/>
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%magenta(%date{yyyy-MM-dd HH:mm:ss}) [%traceToken] %highlight(%level) %cyan(%logger{15}) %message%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.apache.camel.impl.ConsumerCache" level="info"/>
+    <root level="debug">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>

@@ -1,0 +1,16 @@
+/.idea
+/.idea_modules
+.DS_Store
+.*\.orig
+.*\.swp
+*/target/
+target/
+keys/
+.ensime*
+paff.json
+push_notifications*
+messaging_requests*
+*.csv
+jmeter.log
+tmp/
+metrics/
